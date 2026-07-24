@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rubric Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        #groups-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 1000px) {
+            #groups-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 770px) {
+            #groups-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 400px) {
+            #groups-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .group-card {
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .members {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        .member {
+            border: 1px solid black;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            border: 1px solid black;
+            background: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Rubric Rating System</h1>
+        <p>Dashboard</p>
+    </div>
+
+    <div id="groups-container">
+
+
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

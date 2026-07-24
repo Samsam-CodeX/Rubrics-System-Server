@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Rating Info</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .student-header {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            border: 1px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .rating-row {
+            display: grid;
+            grid-template-columns: 150px repeat(5, 1fr);
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .not-rated-card {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="student-header">
+        <h1>Ditchon Johncel Vic</h1>
+        <p>Average Rating: 37/40</p>
+        <p>Total Raters: 5</p>
+    </div>
+
+    <div class="section">
+        <h2>Rated By</h2>
+
+        <div class="rating-row">
+            <div>Rater</div>
+            <div>Clarity</div>
+            <div>Delivery</div>
+            <div>Teamwork</div>
+            <div>Visuals</div>
+            <div>Total</div>
+        </div>
+
+        <div class="rating-row">
+            <div>Armalene</div>
+            <div>5</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>17</div>
+        </div>
+
+        <div class="rating-row">
+            <div>Joshua</div>
+            <div>4</div>
+            <div>4</div>
+            <div>5</div>
+            <div>4</div>
+            <div>17</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Not Rated Yet</h2>
+
+        <div class="not-rated-card">
+            Maria
+        </div>
+
+        <div class="not-rated-card">
+            John
+        </div>
+
+        <div class="not-rated-card">
+            Kevin
+        </div>
+    </div>
+
+</body>
+
+</html>
