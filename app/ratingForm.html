@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rate Student</title>
+
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --accent: #f0d7d0;
+            --border: #d3a79a;
+            --shadow: 0 8px 20px rgba(110, 66, 58, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, var(--bg) 0%, #fcf7f4 100%);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ---------- Cards ---------- */
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            padding: 25px;
+        }
+
+        .card-header h1 {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .card-header p {
+            margin-top: 6px;
+        }
+
+        /* ---------- Table ---------- */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        thead {
+            background: var(--accent);
+        }
+
+        th,
+        td {
+            border: 1px solid #d3a79a;
+            padding: 18px 12px;
+        }
+
+        thead th {
+            text-align: center;
+        }
+
+        tbody td {
+            text-align: center;
+        }
+
+        th:first-child,
+        td:first-child {
+            width: 45%;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+            width: 13.75%;
+        }
+
+        .rating-value {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .rating-label {
+            display: block;
+            font-size: 13px;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        /* ---------- Submit ---------- */
+
+        .submit {
+            padding: 25px;
+            text-align: right;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        button {
+            padding: 12px 30px;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ---------- Responsive ---------- */
+
+        @media (max-width: 900px) {
+
+            .rating-label {
+                display: none;
+            }
+
+            th,
+            td {
+                padding: 14px 8px;
+            }
+
+        }
+
+        #panel {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #panel a, #panel a:visited {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Student Information -->
+
+        <div class="card">
+
+            <div class="card-header">
+
+                <h1>Rate Student</h1>
+
+                <p><strong>Student:</strong> <span id="student-name">Loading...</span></p>
+
+                <p><strong>Group:</strong> <span id="student-group">Loading...</span></p>
+
+                <p id="message" style="margin-top: 10px; color: var(--primary);"></p>
+
+            </div>
+
+        </div>
+
+        <!-- Rating Form -->
+
+        <form id="ratingForm">
+
+            <div class="card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Criterion</th>
+
+                            <th>
+                                <span class="rating-value">4</span>
+                                <span class="rating-label">Excellent</span>
+                            </th>
+
+                            <th>
+                                <span class="rating-value">3</span>
+                                <span class="rating-label">Good</span>
+                            </th>
+
+                            <th>
+                                <span class="rating-value">2</span>
+                                <span class="rating-label">Fair</span>
+                            </th>
+
+                            <th>
+                                <span class="rating-value">1</span>
+                                <span class="rating-label">Needs Improvement</span>
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Content Accuracy</td>
+
+                            <td><input type="radio" name="content_accuracy" value="4" required></td>
+                            <td><input type="radio" name="content_accuracy" value="3"></td>
+                            <td><input type="radio" name="content_accuracy" value="2"></td>
+                            <td><input type="radio" name="content_accuracy" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Understanding of Topic</td>
+
+                            <td><input type="radio" name="understanding_topic" value="4" required></td>
+                            <td><input type="radio" name="understanding_topic" value="3"></td>
+                            <td><input type="radio" name="understanding_topic" value="2"></td>
+                            <td><input type="radio" name="understanding_topic" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Organization &amp; Structure</td>
+
+                            <td><input type="radio" name="organization_structure" value="4" required></td>
+                            <td><input type="radio" name="organization_structure" value="3"></td>
+                            <td><input type="radio" name="organization_structure" value="2"></td>
+                            <td><input type="radio" name="organization_structure" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Delivery &amp; Communication</td>
+
+                            <td><input type="radio" name="delivery_communication" value="4" required></td>
+                            <td><input type="radio" name="delivery_communication" value="3"></td>
+                            <td><input type="radio" name="delivery_communication" value="2"></td>
+                            <td><input type="radio" name="delivery_communication" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Audience Engagement</td>
+
+                            <td><input type="radio" name="audience_engagement" value="4" required></td>
+                            <td><input type="radio" name="audience_engagement" value="3"></td>
+                            <td><input type="radio" name="audience_engagement" value="2"></td>
+                            <td><input type="radio" name="audience_engagement" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Visual Aids</td>
+
+                            <td><input type="radio" name="visual_aids" value="4" required></td>
+                            <td><input type="radio" name="visual_aids" value="3"></td>
+                            <td><input type="radio" name="visual_aids" value="2"></td>
+                            <td><input type="radio" name="visual_aids" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Professional Appearance</td>
+
+                            <td><input type="radio" name="professional_appearance" value="4" required></td>
+                            <td><input type="radio" name="professional_appearance" value="3"></td>
+                            <td><input type="radio" name="professional_appearance" value="2"></td>
+                            <td><input type="radio" name="professional_appearance" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Teamwork</td>
+
+                            <td><input type="radio" name="teamwork" value="4" required></td>
+                            <td><input type="radio" name="teamwork" value="3"></td>
+                            <td><input type="radio" name="teamwork" value="2"></td>
+                            <td><input type="radio" name="teamwork" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Time Allocation</td>
+
+                            <td><input type="radio" name="time_allocation" value="4" required></td>
+                            <td><input type="radio" name="time_allocation" value="3"></td>
+                            <td><input type="radio" name="time_allocation" value="2"></td>
+                            <td><input type="radio" name="time_allocation" value="1"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Strategy</td>
+
+                            <td><input type="radio" name="strategy" value="4" required></td>
+                            <td><input type="radio" name="strategy" value="3"></td>
+                            <td><input type="radio" name="strategy" value="2"></td>
+                            <td><input type="radio" name="strategy" value="1"></td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <div class="submit">
+
+                    <button type="submit">
+                        Submit Rating
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        <div id="panel">
+            
+        </div>
+
+    </div>
+
+    <script src="./js/ratingForm.js"></script>
+
+</body>
+
+</html>
