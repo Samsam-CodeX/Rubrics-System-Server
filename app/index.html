@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubric Rating System</title>
+
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --accent: #f0d7d0;
+            --border: #d3a79a;
+            --shadow: 0 12px 30px rgba(110, 66, 58, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg) 0%, #fcf7f4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            color: var(--text);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 28px 24px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            margin: -4px 0 16px 0;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            color: var(--muted);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: var(--surface);
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(164, 77, 61, 0.14);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 14px;
+            margin-top: 8px;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        .links {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .message {
+            margin-top: 12px;
+            color: #9b2c2c;
+            font-size: 14px;
+            text-align: center;
+            min-height: 20px;
+        }
+
+        .links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Peer Evaluation System</h1>
+
+        <div class="field">
+            <label for="studentId">Student ID</label>
+            <input id="studentId" type="text" placeholder="Enter your student ID">
+        </div>
+
+        <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password">
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <button type="submit">Login</button>
+
+        <div class="links">
+            <a href="studentRegistration.html">Register as Student</a>
+            <a href="access_admin.html">Admin Access</a>
+        </div>
+    </div>
+
+
+    <script src="./js/login.js"></script>
+</body>
+</html>

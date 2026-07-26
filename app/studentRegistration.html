@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --accent: #f0d7d0;
+            --border: #d3a79a;
+            --shadow: 0 12px 30px rgba(110, 66, 58, 0.14);
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg) 0%, #fcf7f4 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 460px;
+            padding: 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 24px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.4px;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            background: var(--surface);
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(165, 91, 76, 0.14);
+        }
+
+        #message{
+            margin-top:12px; 
+            color:#9b2c2c; 
+            min-height:20px
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fdfefe;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>STUDENT REGISTRATION</h2>
+
+        <div class="field">
+            <label for="studentId">Student ID</label>
+            <input id="studentId" type="text" placeholder="Enter student ID">
+        </div>
+
+        <div class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" placeholder="Enter first name">
+        </div>
+
+        <div class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" placeholder="Enter last name">
+        </div>
+
+        <div class="field">
+            <label for="groupNumber">Group</label>
+            <select id="groupNumber">
+                <option value="1">Group 1</option>
+                <option value="2">Group 2</option>
+                <option value="3">Group 3</option>
+                <option value="4">Group 4</option>
+                <option value="5">Group 5</option>
+                <option value="6">Group 6</option>
+                <option value="7">Group 7</option>
+                <option value="8">Group 8</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter password">
+        </div>
+
+        <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" type="password" placeholder="Confirm password">
+        </div>
+
+        <div id="message"></div>
+
+        <button id="register">Register</button>
+    </div>
+
+    <script src="./js/register.js"></script>
+</body>
+</html>
