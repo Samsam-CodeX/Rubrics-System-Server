@@ -43,7 +43,7 @@ async function register(studentId, firstName, lastName, groupNumber, password, c
 
         // Success — redirect to login
         alert('Registration successful. Please login.');
-        window.location.href = 'index.html';
+        window.location.href = 'home';
 
     } catch (err) {
         console.error('Register request failed:', err);
