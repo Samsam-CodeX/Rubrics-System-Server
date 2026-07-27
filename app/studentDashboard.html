@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Rating System</title>
+
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --accent: #f0d7d0;
+            --border: #d3a79a;
+            --shadow: 0 10px 30px rgba(110, 66, 58, 0.12);
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 24px;
+            color: var(--text);
+        }
+
+        .container {
+            width: min(100%, 900px);
+            margin: 24px auto;
+            background: var(--surface);
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+
+        .student-info {
+            margin-top: 20px;
+            padding: 16px 18px;
+            background: var(--accent);
+            border-radius: 12px;
+            border: 1px solid #e0b8af;
+        }
+
+        .divider {
+            margin: 24px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+
+        .group-card {
+            border: 1px solid var(--border);
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--surface);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+        }
+
+        .group-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .group-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .members {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .member-list {
+            padding: 12px;
+            border-radius: 10px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+        }
+
+        .member-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e7cfc7;
+            font-size: 14px;
+        }
+
+        .member-item:last-child {
+            border-bottom: none;
+        }
+
+        button[disabled] {
+            opacity: 0.65;
+            cursor: default;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: 1px solid #a55b4c;
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        .your-group {
+            background: #f8ece9;
+            border-color: #d3a79a;
+        }
+
+        .badge {
+            color: #a44d3d;
+            font-weight: 700;
+        }
+
+        #logout {
+            height: 35px;
+            line-height: 35px; /*to make the text center*/
+            margin-top: 20px;
+            text-align: center;
+        }
+        #logout a, #logout a:visited {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="student-name">Loading student</h1>
+
+    <div class="student-info">
+        <p><strong>Student ID:</strong> <span id="student-id">-</span></p>
+        <p><strong>Group:</strong> <span id="student-group">-</span></p>
+        <p><strong>Average Rating:</strong> <span id="student-average">-</span></p>
+        <p><strong>Total Raters:</strong> <span id="student-raters">-</span></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Groups Available for Evaluation</h2>
+        <p style="margin:0 0 12px; color:#7a4f45; font-size:14px;">Your own group is excluded from this list.</p>
+
+    <div id="groups-container"></div>
+
+    <div id="logout">
+        <a href="home">← Logout</a>
+    </div>
+
+</div>
+
+<script src="./js/studentDashboard.js"></script>
+</body>
+</html>
