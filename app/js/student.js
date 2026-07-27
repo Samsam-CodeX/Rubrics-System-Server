@@ -19,8 +19,8 @@ async function load() {
         const { student, ratings, notRated } = await response.json();
 
         document.getElementById('student-name').textContent = student.fullName;
-        document.getElementById('student-average').textContent = `Average Rating: ${student.studentAverage ?? 'N/A'} / 40  ----------- ${(student.studentAverage * 100 / 40)}%`;
-        document.getElementById('student-raters').textContent = `Total Raters: ${student.totalRaters ?? 0}`;
+        document.getElementById('student-average').innerHTML = `<strong>Average Rating:</strong> ${student.studentAverage ?? 'N/A'} / 40  ----------- ${(student.studentAverage * 100 / 40)}%`;
+        document.getElementById('student-raters').innerHTML = `<strong>Total Raters:</strong> ${student.totalRaters ?? 0}`;
 
         const ratingsContainer = document.getElementById('ratings-container');
         const notRatedContainer = document.getElementById('not-rated-container');
