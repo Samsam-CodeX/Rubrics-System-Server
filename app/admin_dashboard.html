@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubric Dashboard</title>
+
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --accent: #f0d7d0;
+            --border: #d3a79a;
+            --shadow: 0 6px 16px rgba(110, 66, 58, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), #e5b9b0);
+            color: var(--text);
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .header h1,
+        .header p {
+            margin: 0;
+        }
+
+        .header p {
+            margin-top: 6px;
+            opacity: 0.95;
+        }
+
+        #goto-students {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+        }
+        #goto-students:hover {
+            background: #faf5f3;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+        }
+
+        #groups-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            #groups-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 850px) {
+            #groups-container {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+
+        .group-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .group-card h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .members {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+
+        .member {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+        }
+
+        .member:last-child {
+            margin-bottom: 0;
+        }
+
+        button {
+            margin-top: 6px;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #f7efe4;
+            color: var(--text);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #eedbc0;
+        }
+
+        #logout {
+            width: 100%;
+            height: 50px;
+            line-height: 0px;
+            background: linear-gradient(135deg, var(--accent), #e5b9b0);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Rubric Rating System</h1>
+        <h3>Dashboard</h3>
+    </div>
+
+    <div id="goto-students"><h3 style="margin: 0;">See all students ➡</h3></div>
+
+    <div id="groups-container">
+
+        <h2>Loading groups...</h2>
+
+    </div>
+
+    <button id="logout">
+        <p>Logout</p>
+    </button>
+    <script src="js/admin_dashboard.js"></script>
+</body>
+
+</html>
