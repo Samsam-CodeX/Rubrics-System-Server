@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students</title>
+    <style>
+        :root {
+            --bg: #f7ece8;
+            --surface: #fffaf8;
+            --surface-soft: #f3e0da;
+            --text: #4f2d28;
+            --muted: #7a4f45;
+            --primary: #a44d3d;
+            --primary-dark: #8c3f33;
+            --border: #d3a79a;
+            --shadow: 0 10px 30px rgba(110, 66, 58, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), #e5b9b0);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            padding: 22px 24px;
+            margin-bottom: 24px;
+        }
+
+        h1,
+        h2,
+        p {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .top-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 18px;
+            align-items: center;
+        }
+
+        .description {
+            color: var(--muted);
+            max-width: 700px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button,
+        a.button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .button:hover,
+        a.button:hover {
+            background: #f4e3dc;
+        }
+
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: #f7efe4;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .students-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .student-card {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 120px;
+        }
+
+        .student-card > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .details {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .view-button {
+            background-color: #faece8;
+        }
+        .delete-button {
+            min-width: 140px;
+            border-color: #d14b44;
+            background: #f9e8e5;
+            color: #7f2c29;
+        }
+
+        .delete-button:hover {
+            background: #f3d0c9;
+        }
+
+        .student-card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .student-info {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+        }
+
+        .badge.yes {
+            background: #dcf0e0;
+            color: #2f6f3f;
+            border-color: #b9d9b0;
+        }
+
+        .badge.no {
+            background: #fbe7e4;
+            color: #8c3f33;
+            border-color: #e8c2bb;
+        }
+
+        .empty-state {
+            padding: 28px;
+            border-radius: 16px;
+            background: var(--surface);
+            border: 1px dashed var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>All Students</h1>
+            <div class="top-row">
+                <p class="description">This page lists every registered student.</p>
+                <div class="actions">
+                    <a href="dashboard.html" class="button" id="back-dashboard">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="students-grid" id="students-grid">
+            <div class="empty-state">Loading students…</div>
+        </div>
+    </div>
+
+    <script src="./js/allStudents.js"></script>
+</body>
+
+</html>
