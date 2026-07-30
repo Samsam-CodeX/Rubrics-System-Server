@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 
 // ---------------- API Routes -----------------------//
-app.get('/api/students', async (req, res) => {
+app.get('/api/students', requireTeacher, async (req, res) => {
     try {
         const [students] = await pool.query(`
             SELECT
