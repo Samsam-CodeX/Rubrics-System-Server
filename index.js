@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 app.use(session({
-    secret: 'replace-this-with-a-long-random-secret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
